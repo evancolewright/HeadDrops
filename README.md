@@ -15,13 +15,13 @@ headdrops.guarantee | This permission guarantees the drop of a player head
 
 ### API
 Although minimal, the plugin does come with a single event that you can hook into.  This event is fired when a player drops their head. An example of that event is below.
-`
+```
     @EventHandler
     public void onDrop(PlayerDropHeadEvent event)
     {
         event.getPlayer().sendMessage("Your head dropped, lol.");
     }
-`
+```
 **To utilize this event, you will need to add the jar as a dependency, or install to your local maven repository (if you are using Maven).**
 
 ### Suggestions
