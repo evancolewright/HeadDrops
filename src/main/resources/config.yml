@@ -1,0 +1,42 @@
+# ==============================================================================================
+# HeadDrops (by Evan Wright)
+# v1.2
+
+# Please remember that if you have issues (or want extra features), you need to reach out to me (via Spigot or Github) and I will address these accordingly.
+# Please do not leave a review prior to requesting help from me.
+# ==============================================================================================
+
+# The chance a player has of dropping their head on death that was not caused by another player. (0.1 - 1.0)
+default_drop_chance: 0.2
+
+# The chance a player has of dropping their head on death when slain by another player. (0.1 - 1.0)
+slain_drop_chance: 0.5
+
+# Represents a head that is dropped when a player is not killed by a player.
+# You can disable this behavior by setting 'enabled' to false.
+# Available placeholders:
+# {PLAYER} - The player's name
+# {TIMESTAMP} - The formatted time that the player died.
+default_head:
+  enabled: true
+  name: "&a&l{PLAYER}'s &7&lHead"
+  lore:
+    - "&eDied on&7: &a&l{TIMESTAMP}"
+
+# Represents a head that is dropped when a player is killed by a player.
+# You can disable this behavior by setting 'enabled' to false.
+# Available placeholders:
+# {PLAYER} - The player's name
+# {KILLER} - The person who killed the player
+# {ITEM} - The name of the item that was used to kill the player.
+# {TIMESTAMP} - The formatted time that the player was killed.
+slain_head:
+  enabled: true
+  name: "&a&l{PLAYER}'s &7&lHead"
+  # If the player is killed by a player that used their fist, what should the {ITEM} placeholder be replaced with?
+  fist_text: "their Fisty"
+  lore:
+    - "&eKilled by&7: &a&l{KILLER}"
+    - "&aUsing {ITEM}"
+
+
