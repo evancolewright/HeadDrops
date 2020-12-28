@@ -13,6 +13,9 @@ Permission | Description
 ------------ | -------------
 headdrops.guarantee | This permission guarantees the drop of a player head
 
+### Configuration
+The configuration file is pretty self-explanatory.  Everything is heavily commented to ensure that you understand exactly what you are doing.  If you have questions, please PM me on Spigot.
+
 ### API
 Although minimal, the plugin does come with a single event that you can hook into.  This event is fired when a player drops their head. An example of that event is below.
 ```
