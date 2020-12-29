@@ -1,5 +1,5 @@
 # HeadDrops
-HeadDrops is a bare-bones head-dropping plugin for Spigot 1.13 - 1.16.4. It was originally coded by me in early 2016, and has accrued a whopping **31,000** downloads since then.  Many people love the simplicity, and I plan to stick to that.  Nevertheless, it was almost too simplistic. So, I have added a couple more features, as well as recoded the entire thing from scratch.
+HeadDrops is a bare-bones head-dropping plugin for Spigot 1.8 - 1.16.4. It was originally coded by me in early 2016, and has accrued a whopping **31,000** downloads since then.  Many people love the simplicity, and I plan to stick to that.  Nevertheless, it was almost too simplistic. So, I have added a couple more features, as well as recoded the entire thing from scratch.
 
 ### Installation
 The installation of this plugin is typical to every server plugin.
