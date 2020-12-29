@@ -2,10 +2,6 @@ package com.evancolewright.headdrops;
 
 public enum HeadType
 {
-    /**
-     * Represents the type of head to drop.
-     */
-
     DEFAULT("default_drop_chance", "default_head"),
     SLAIN("slain_drop_chance", "slain_head");
 

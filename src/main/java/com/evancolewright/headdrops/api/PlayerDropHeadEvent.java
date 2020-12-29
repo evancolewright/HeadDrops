@@ -52,6 +52,15 @@ public final class PlayerDropHeadEvent extends Event implements Cancellable
         this.cancelled = cancel;
     }
 
+    /**
+     * Server required this method to run, however the Event class requires the method below :/
+     * @return  the static handler list
+     */
+    public static HandlerList getHandlerList()
+    {
+        return HANDLERS_LIST;
+    }
+
     @Override
     public HandlerList getHandlers()
     {

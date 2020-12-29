@@ -39,18 +39,21 @@ public final class HeadDropListeners implements Listener
         {
             PlayerDropHeadEvent playerDropHeadEvent = new PlayerDropHeadEvent(player, killer);
 
-            // Drop the immediately regardless
-            if (headType == HeadType.SLAIN && killer.hasPermission("headdrops.guarantee"))
+            if (!player.hasPermission("headdrops.immune"))
             {
-                if (shouldDropHead(playerDropHeadEvent))
-                    event.getDrops().add(getPlayerHead(player, headType, killer));
-                return;
-            }
-            // Drop head based on chance
-            if (random < config.getDouble(headType.getChancePath()))
-            {
-                if (shouldDropHead(playerDropHeadEvent))
-                    event.getDrops().add(getPlayerHead(player, headType, killer));
+                // Drop the immediately regardless
+                if (headType == HeadType.SLAIN && killer.hasPermission("headdrops.guarantee"))
+                {
+                    if (shouldDropHead(playerDropHeadEvent))
+                        event.getDrops().add(getPlayerHead(player, headType, killer));
+                    return;
+                }
+                // Drop head based on chance
+                if (random < config.getDouble(headType.getChancePath()))
+                {
+                    if (shouldDropHead(playerDropHeadEvent))
+                        event.getDrops().add(getPlayerHead(player, headType, killer));
+                }
             }
         }
     }
@@ -59,6 +62,12 @@ public final class HeadDropListeners implements Listener
     {
         Bukkit.getPluginManager().callEvent(event);
         return !event.isCancelled();
+    }
+
+    @EventHandler
+    public void onDrop(PlayerDropHeadEvent event)
+    {
+        event.getPlayer().sendMessage("Your head dropped, lol.");
     }
 
     private ItemStack getPlayerHead(Player player, HeadType headType, Player killer)
