@@ -64,12 +64,6 @@ public final class HeadDropListeners implements Listener
         return !event.isCancelled();
     }
 
-    @EventHandler
-    public void onDrop(PlayerDropHeadEvent event)
-    {
-        event.getPlayer().sendMessage("Your head dropped, lol.");
-    }
-
     private ItemStack getPlayerHead(Player player, HeadType headType, Player killer)
     {
         // Construct what we can prior to checking if the player was slain
