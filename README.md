@@ -8,10 +8,10 @@ The installation of this plugin is typical to every server plugin.
 3. Restart your server
 
 ### Permissions
-**Currently, there is only one single permission.**  More may be added in the future upon suggestion. Keep in mind that BY DEFAULT every single player has the chance to drop their head (including server operators). If requested, I will re-add this permission in an upcoming update.
 Permission | Description
 ------------ | -------------
 headdrops.guarantee | This permission guarantees the drop of a player head
+headdrops.immune | This permission prevents the player from dropping a head.  Keep in mind that this overrides the guarantee permission!
 
 ### Configuration
 The [configuration](https://github.com/evancolewright/HeadDrops/blob/main/src/main/resources/config.yml) file is pretty self-explanatory.  Everything is heavily commented to ensure that you understand exactly what you are doing.  If you have questions, please PM me on [SpigotMC](https://www.spigotmc.org/members/evanthesurfer.97504/).
