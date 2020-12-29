@@ -64,18 +64,20 @@ public final class HeadDropListeners implements Listener
         return !event.isCancelled();
     }
 
-    @EventHandler
-    public void onDrop(PlayerDropHeadEvent event)
-    {
-        event.getPlayer().sendMessage("Your head dropped, lol.");
-    }
-
     private ItemStack getPlayerHead(Player player, HeadType headType, Player killer)
     {
+        // Obtain the ItemStack based on the version of minecraft
+        ItemStack playerHead;
+        try {
+            playerHead = new ItemStack(Material.getMaterial("PLAYER_HEAD"), 1);
+        } catch (IllegalArgumentException | NullPointerException exception)
+        {
+            playerHead = new ItemStack(Material.getMaterial("SKULL_ITEM"), 1, (short) 3);
+        }
+
         // Construct what we can prior to checking if the player was slain
-        ItemStack playerHead = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta playerMeta = (SkullMeta) playerHead.getItemMeta();
-        playerMeta.setOwningPlayer(player);
+        playerMeta.setOwner(player.getName());
 
         String name = colorize(config.getString(headType.getItemPath() + ".name"));
         List<String> lore = colorize(config.getStringList(headType.getItemPath() + ".lore"));
@@ -104,7 +106,7 @@ public final class HeadDropListeners implements Listener
         // Replace conditional placeholders
         if (killer != null)
         {
-            ItemStack itemInHand = killer.getInventory().getItemInMainHand();
+            ItemStack itemInHand = killer.getInventory().getItemInHand();
 
             // Determine the {ITEM} placeholder value
             String item;
