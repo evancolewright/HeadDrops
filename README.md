@@ -1,5 +1,5 @@
 # HeadDrops
-HeadDrops is a bare-bones head-dropping plugin for Spigot 1.8 - 1.16.4. It was originally coded by me in early 2016, and has accrued a whopping **31,000** downloads since then.  Many people love the simplicity, and I plan to stick to that.  Nevertheless, it was almost too simplistic. So, I have added a couple more features, as well as recoded the entire thing from scratch.
+HeadDrops is a bare-bones head-dropping plugin for Spigot 1.8 - 1.16.4. It was originally created by myself in early 2016 and has accrued over **50,000** downloads since then.  This plugin will be updated on an as-needed basis for bug fixes, but further additions are currently haulted due to the lack of time that I can dedicate to this project.  If you would like to add further additions, please feel free to either fork this project, or submit a PR.
 
 ### Installation
 The installation of this plugin is typical to every server plugin.
@@ -31,5 +31,5 @@ Although minimal, the plugin does come with a single event that you can hook int
 <img src="https://i.imgur.com/Xs7B4kL.png"></img>
 
 ### Suggestions
-If you have suggestions, or would like to contribute, please PM me on [SpigotMC](https://www.spigotmc.org/members/evanthesurfer.97504/) or submit a pull request.  
+If you have suggestions or would like to contribute to the code, please PM me on [SpigotMC](https://www.spigotmc.org/members/evanthesurfer.97504/) or submit a pull request.  
 
