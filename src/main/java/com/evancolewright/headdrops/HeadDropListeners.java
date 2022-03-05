@@ -33,7 +33,6 @@ public final class HeadDropListeners implements Listener
         Player player = event.getEntity().getPlayer();
         Player killer = event.getEntity().getKiller();
         HeadType headType = killer == null ? HeadType.DEFAULT : HeadType.SLAIN;
-        double random = Math.random();
 
         if (config.getBoolean(headType.getItemPath() + ".enabled"))
         {
@@ -49,7 +48,7 @@ public final class HeadDropListeners implements Listener
                     return;
                 }
                 // Drop head based on chance
-                if (random < config.getDouble(headType.getChancePath()))
+                if (Math.random() < config.getDouble(headType.getChancePath()))
                 {
                     if (shouldDropHead(playerDropHeadEvent))
                         event.getDrops().add(getPlayerHead(player, headType, killer));
