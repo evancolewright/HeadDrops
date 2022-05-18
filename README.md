@@ -1,35 +1,72 @@
 # HeadDrops
-HeadDrops is a bare-bones head-dropping plugin for Spigot 1.8 - 1.16.4. It was originally created by myself in early 2016 and has accrued over **50,000** downloads since then.  This plugin will be updated on an as-needed basis for bug fixes, but further additions are currently haulted due to the lack of time that I can dedicate to this project.  If you would like to add further additions, please feel free to either fork this project or submit a PR.
 
-### Installation
-The installation of this plugin is typical to every server plugin.
-1. Download the plugin from [SpigotMC](https://www.spigotmc.org/resources/headdrops.15964/)
-2. Transport the jar file to your plugin folder
-3. Restart your server
+HeadDrops is a server plugin made for Spigot servers running versions 1.8.8 - 1.18.2.  The plugin alters the player experience by allowing players on the server to drop their heads when they die.
 
-### Permissions
-Permission | Description
------------- | -------------
-headdrops.guarantee | This permission guarantees the drop of a player head
-headdrops.immune | This permission prevents the player from dropping a head.  Keep in mind that this overrides the guarantee permission!
+## Building from Source
 
-### Configuration
-The [configuration](https://github.com/evancolewright/HeadDrops/blob/main/src/main/resources/config.yml) file is pretty self-explanatory.  Everything is heavily commented to ensure that you understand exactly what you are doing.  If you have questions, please PM me on [SpigotMC](https://www.spigotmc.org/members/evanthesurfer.97504/).
+To build the project, you will need:
 
-### API
-Although minimal, the plugin does come with a single event that you can hook into.  This event is fired when a player drops their head. An example of that event is below.
+- Git
+- A compatible JDK for the server version you are running
+- Maven (with environment variables set)
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/evancolewright/HeadDrops.git
+   ```
+
+2. Change to the repository directory
+
+   ```bash
+   cd HeadDrops
+   ```
+
+3. Generate the .jar
+
+   ```bash
+   mvn package
+   ```
+
+4. Move the generated .jar (located in PWD/output directory) to your server/plugins directory
+
+5. Start your server
+
+## API
+
+Since v1.5, you are able to hook into various events that are emitted by the plugin and change internal behavior from within your own project.
+
+1. **HeadDropEvent** - Triggered whenever a player dies and drops their head.
+The following example shows how you can alter the head that is dropped using this event.
+
+```Java
+@EventHandler
+public void onHeadDropped(HeadDropEvent event)
+{
+    // Get the head that is supposed to be dropped
+    ItemStack originalHead = event.getHeadDrop();
+	
+    // Implement your changes... For example, maybe it's Halloween, and you want all head drops to be a pumpkin head
+    ItemStack newHead = new ItemStack(Material.PUMPKIN);
+    if (originalHead.hasItemMeta()) 
+        newHead.setItemMeta(headItem.getItemMeta())
+    event.setHeadDrop(newHead);    
+}
 ```
-    @EventHandler
-    public void onDrop(PlayerDropHeadEvent event)
-    {
-        event.getPlayer().sendMessage("Your head dropped, lol.");
-    }
-```
-**To utilize this event, you will need to add the jar as a dependency, or install to your local maven repository (if you are using Maven).**
 
-### Images
-<img src="https://i.imgur.com/Xs7B4kL.png"></img>
+2. **HeadBreakEvent** - Triggered whenever a player breaks a head that has been placed in the world
 
-### Suggestions
-If you have suggestions or would like to contribute to the code, please PM me on [SpigotMC](https://www.spigotmc.org/members/evanthesurfer.97504/) or submit a pull request.  
+   *Example coming soon...*
+
+3. **HeadPlaceEvent** - Triggered whenever a player placed a head from their inventory in the world
+
+   *Example coming soon...*
+
+## Additional Information
+
+For more information on this plugin, please refer to the [official plugin page](https://www.spigotmc.org/resources/headdrops-1-8-1-18.15964/).
+
+## License
+
+MIT
 

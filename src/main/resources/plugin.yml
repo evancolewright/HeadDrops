@@ -1,6 +1,6 @@
 name: HeadDrops
 version: ${project.version}
-main: com.evancolewright.headdrops.HeadDrops
+main: com.github.evancolewright.headdrops.HeadDropsPlugin
 authors: [ evancolewright ]
 description: A simple plugin that causes players to drop their heads.
 website: evancolewright.github.io
