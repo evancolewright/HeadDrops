@@ -45,7 +45,7 @@
                     <relocations>
                         <relocation>
                             <pattern>de.tr7zw.changeme.nbtapi</pattern>
-                            <shadedPattern>com.github.evancolewright.nbtapi</shadedPattern>
+                            <shadedPattern>com.github.evancolewright.headdrops.nbtapi</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
