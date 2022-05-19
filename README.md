@@ -6,9 +6,9 @@ HeadDrops is a server plugin made for Spigot servers running versions 1.8.8 - 1.
 
 To build the project, you will need:
 
-- Git
-- A compatible JDK for the server version you are running
-- Maven (with environment variables set)
+- [Git](https://git-scm.com/)
+- A compatible [JDK](https://www.oracle.com/java/technologies/downloads/) for the server version you are running
+- [Maven](https://maven.apache.org/) (with environment variables set)
 
 1. Clone the repository
 
@@ -16,30 +16,21 @@ To build the project, you will need:
    git clone https://github.com/evancolewright/HeadDrops.git
    ```
 
-2. Change to the repository directory
-
-   ```bash
-   cd HeadDrops
-   ```
-
-3. Generate the .jar
+2. From the root directory of the cloned source code, run:
 
    ```bash
    mvn package
    ```
 
-4. Move the generated .jar (located in PWD/output directory) to your server/plugins directory
+3. Move the generated JAR file (located in /target directory) to your server/plugins directory
 
-5. Start your server
+4. Start your server
 
 ## API
 
-Since v1.5, you are able to hook into various events that are emitted by the plugin and change internal behavior from within your own project.
+The plugin contains a custom event that you can hook into that allows you alter the default behavior of the plugin from your own plugin.  Below is an example of how you can make all head drops be pumpkins.
 
-1. **HeadDropEvent** - Triggered whenever a player dies and drops their head.
-The following example shows how you can alter the head that is dropped using this event.
-
-```Java
+```
 @EventHandler
 public void onHeadDropped(HeadDropEvent event)
 {
@@ -47,20 +38,9 @@ public void onHeadDropped(HeadDropEvent event)
     ItemStack originalHead = event.getHeadDrop();
 	
     // Implement your changes... For example, maybe it's Halloween, and you want all head drops to be a pumpkin head
-    ItemStack newHead = new ItemStack(Material.PUMPKIN);
-    if (originalHead.hasItemMeta()) 
-        newHead.setItemMeta(headItem.getItemMeta())
-    event.setHeadDrop(newHead);    
+    event.setHeadDrop(new ItemStack(Material.PUMPKIN));    
 }
 ```
-
-2. **HeadBreakEvent** - Triggered whenever a player breaks a head that has been placed in the world
-
-   *Example coming soon...*
-
-3. **HeadPlaceEvent** - Triggered whenever a player placed a head from their inventory in the world
-
-   *Example coming soon...*
 
 ## Additional Information
 
@@ -69,4 +49,3 @@ For more information on this plugin, please refer to the [official plugin page](
 ## License
 
 MIT
-
