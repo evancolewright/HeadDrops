@@ -4,7 +4,7 @@ import org.apache.commons.lang.WordUtils;
 
 public final class StringUtils
 {
-    static String capitalizeMultiWordString(String string, String separator)
+    static String capitalizeMultiWordMaterialString(String string, String separator)
     {
         StringBuilder stringBuilder = new StringBuilder();
         String[] tokens = string.split(separator);

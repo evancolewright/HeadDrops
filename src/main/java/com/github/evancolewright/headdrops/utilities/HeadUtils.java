@@ -52,7 +52,7 @@ public final class HeadUtils
         if (murderWeapon.getType() == Material.AIR)
             murderWeaponName = "Fist";
         else if (!murderWeapon.hasItemMeta() || murderWeapon.getItemMeta().getDisplayName().equals(""))
-            murderWeaponName = StringUtils.capitalizeMultiWordString(murderWeapon.getType().toString().toLowerCase(), "_");
+            murderWeaponName = StringUtils.capitalizeMultiWordMaterialString(murderWeapon.getType().toString().toLowerCase(), "_");
         else
             murderWeaponName = murderWeapon.getItemMeta().getDisplayName();
         string = string.replace("{KILLER}", killer.getName())

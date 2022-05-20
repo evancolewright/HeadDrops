@@ -29,9 +29,9 @@ public final class CacheHandler
         this.headLocationCache.add(playerHeadData);
     }
 
-    public boolean removePlayerHeadData(Location location)
+    public void removePlayerHeadData(Location location)
     {
-        return headLocationCache.removeIf(playerHeadData -> playerHeadData.getLocation().equals(location));
+        this.headLocationCache.removeIf(playerHeadData -> playerHeadData.getLocation().equals(location));
     }
 
     public Optional<PlayerHeadData> getPlayerHeadData(Location location)
@@ -74,6 +74,7 @@ public final class CacheHandler
 
     /**
      * Adapter class to JSON serialize / deserialize {@link Location} objects.
+     *
      * @author Evan Wright
      */
     private static class LocationAdapter implements JsonDeserializer<Location>, JsonSerializer<Location>
