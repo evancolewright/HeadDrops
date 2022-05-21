@@ -1,7 +1,6 @@
 package com.github.evancolewright.headdrops;
 
 import com.github.evancolewright.headdrops.handlers.CacheHandler;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class HeadDropsPlugin extends JavaPlugin

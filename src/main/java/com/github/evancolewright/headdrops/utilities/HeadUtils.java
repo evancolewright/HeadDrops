@@ -46,7 +46,7 @@ public final class HeadUtils
         if (killer == null)
             return string;
 
-        ItemStack murderWeapon = killer.getInventory().getItemInMainHand();
+        ItemStack murderWeapon = killer.getInventory().getItemInHand();
         String murderWeaponName;
 
         if (murderWeapon.getType() == Material.AIR)
