@@ -6,7 +6,7 @@
 #  ██║  ██║███████╗██║  ██║██████╔╝██████╔╝██║  ██║╚██████╔╝██║     ███████║
 #  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚══════╝
 #
-# Version: 1.5
+# Version: 1.5.2
 #
 # Thank you for downloading my plugin! If you have any issues or would like to request a feature,
 # please open an issue on my GitHub repository (https://github.com/evancolewright/HeadDrops)
@@ -19,12 +19,13 @@ transport_to_killer_inventory: false
 # Available placeholders:
 # {PLAYER} - The player's name
 # {TIMESTAMP} - The formatted time that the player died.
+# Make sure all timestamps are fully uppercase!
 normal:
   enabled: true
   disabled_worlds:
     - "disabledworld1"
     - "disabledworld2"
-  drop_chance: 1
+  drop_chance: 0.75
   head:
     name: "&a&l{PLAYER}'s &7&lHead"
     lore:
@@ -34,8 +35,9 @@ normal:
 # Available placeholders:
 # {PLAYER} - The player's name
 # {KILLER} - The person who killed the player
-# {ITEM} - The name of the item that was used to kill the player.
+# {MURDER_WEAPON} - The name of the item that was used to kill the player.
 # {TIMESTAMP} - The formatted time that the player was killed.
+# Make sure all timestamps are fully uppercase!
 slain:
   enabled: true
   disabled_worlds:
@@ -46,5 +48,5 @@ slain:
     name: "&a&l{PLAYER}'s &7&lHead"
     lore:
       - "&eDied on&7: &f&l{TIMESTAMP}"
-      - "&eKilled by: &f&l{Killer}"
+      - "&eKilled by: &f&l{KILLER}"
       - "&eKilled with: &f&l{MURDER_WEAPON}"

@@ -6,7 +6,7 @@
 
     <groupId>com.evancolewright</groupId>
     <artifactId>headdrops</artifactId>
-    <version>1.5</version>
+    <version>1.5.2</version>
     <packaging>jar</packaging>
 
     <name>HeadDrops</name>

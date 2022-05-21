@@ -1,6 +1,7 @@
 package com.github.evancolewright.headdrops.api;
 
 import de.tr7zw.changeme.nbtapi.NBTItem;
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public final class HeadDropsAPI
@@ -14,6 +15,7 @@ public final class HeadDropsAPI
      */
     public static boolean isPlayerHead(ItemStack itemStack)
     {
+        if (itemStack.getType() == Material.AIR) return false;
         NBTItem nbtItem = new NBTItem(itemStack);
         if (!nbtItem.hasNBTData() || !nbtItem.hasCustomNbtData())
             return false;
