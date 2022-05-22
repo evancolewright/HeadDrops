@@ -27,7 +27,7 @@ public final class HeadUtils
             playerHead = new ItemStack(Material.getMaterial("SKULL_ITEM"), 1, (short) 3);
         }
         SkullMeta skullMeta = (SkullMeta) playerHead.getItemMeta();
-        skullMeta.setOwner(Bukkit.getPlayer(playerUUID).getName());
+        skullMeta.setOwner(Bukkit.getOfflinePlayer(playerUUID).getName());
         skullMeta.setDisplayName(replacePlaceHolders(displayName, playerUUID, killer));
         skullMeta.setLore(lore.stream().map(s -> replacePlaceHolders(s, playerUUID, killer)).collect(Collectors.toList()));
         playerHead.setItemMeta(skullMeta);
