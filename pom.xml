@@ -6,7 +6,7 @@
 
     <groupId>com.evancolewright</groupId>
     <artifactId>headdrops</artifactId>
-    <version>1.5.2</version>
+    <version>1.5.3</version>
     <packaging>jar</packaging>
 
     <name>HeadDrops</name>
@@ -26,6 +26,14 @@
                 <configuration>
                     <source>9</source>
                     <target>9</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <outputDirectory>C:\\Users\\evanc\\Desktop\\Minecraft Server\\plugins</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
