@@ -40,7 +40,7 @@ public final class HeadUtils
 
     private static String replacePlaceHolders(String string, UUID playerUUID, Player killer)
     {
-        string = ChatColor.translateAlternateColorCodes('&', string.replace("{PLAYER}", Bukkit.getPlayer(playerUUID).getName())
+        string = ChatColor.translateAlternateColorCodes('&', string.replace("{PLAYER}", Bukkit.getOfflinePlayer(playerUUID).getName())
                 .replace("{TIMESTAMP}", new SimpleDateFormat("MMM dd, yyy")
                         .format(new Date(System.currentTimeMillis()))));
         if (killer == null)
