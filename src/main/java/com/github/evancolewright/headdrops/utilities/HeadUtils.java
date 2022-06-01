@@ -18,22 +18,17 @@ public final class HeadUtils
 {
     public static ItemStack createPlayerHead(UUID playerUUID, Player killer, String displayName, List<String> lore)
     {
-        ItemStack playerHead;
-        try
-        {
-            playerHead = new ItemStack(Material.getMaterial("PLAYER_HEAD"), 1);
-        } catch(IllegalArgumentException | NullPointerException exception)
-        {
-            playerHead = new ItemStack(Material.getMaterial("SKULL_ITEM"), 1, (short) 3);
-        }
+        ItemStack playerHead = getVersionIndependentHead();
         SkullMeta skullMeta = (SkullMeta) playerHead.getItemMeta();
         skullMeta.setOwner(Bukkit.getOfflinePlayer(playerUUID).getName());
         skullMeta.setDisplayName(replacePlaceHolders(displayName, playerUUID, killer));
-        skullMeta.setLore(lore.stream().map(s -> replacePlaceHolders(s, playerUUID, killer)).collect(Collectors.toList()));
+        skullMeta.setLore(lore.stream()
+                .map(s -> replacePlaceHolders(s, playerUUID, killer))
+                .collect(Collectors.toList()));
         playerHead.setItemMeta(skullMeta);
 
         NBTItem headNBT = new NBTItem(playerHead);
-        headNBT.setUUID("HeadDrops_Owner", playerUUID);
+        headNBT.setString("HeadDrops_Owner", playerUUID.toString());
 
         return headNBT.getItem();
     }
@@ -59,5 +54,13 @@ public final class HeadUtils
                 .replace("{MURDER_WEAPON}", murderWeaponName);
 
         return string;
+    }
+
+    private static ItemStack getVersionIndependentHead()
+    {
+        Material material = Material.getMaterial("PLAYER_HEAD");
+        if (material == null)
+            return new ItemStack(Material.getMaterial("SKULL_ITEM"), 1, (byte) 3);
+        return new ItemStack(material);
     }
 }

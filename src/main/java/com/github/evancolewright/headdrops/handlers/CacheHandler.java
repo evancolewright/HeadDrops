@@ -46,7 +46,7 @@ public final class CacheHandler
     {
         File headLocationsFile = new File(this.plugin.getDataFolder() + File.separator + "data", "headLocations.json");
         if (!headLocationsFile.exists())
-            return;
+            return;  // Needed for first run of the plugin before the data file is created.
         try (Reader reader = new FileReader(headLocationsFile))
         {
             this.headLocationCache = new ArrayList<>(Arrays.asList(this.gson.fromJson(reader, PlayerHeadData[].class)));
@@ -73,7 +73,7 @@ public final class CacheHandler
     }
 
     /**
-     * Adapter class to JSON serialize / deserialize {@link Location} objects.
+     * Adapter class to serialize / deserialize {@link Location} objects to/from JSOn.
      *
      * @author Evan Wright
      */

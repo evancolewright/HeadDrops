@@ -4,3 +4,4 @@ main: com.github.evancolewright.headdrops.HeadDropsPlugin
 authors: [ evancolewright ]
 description: A simple plugin that causes players to drop their heads.
 website: evancolewright.github.io
+api-version: 1.13

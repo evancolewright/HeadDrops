@@ -31,8 +31,8 @@ public final class PlayerHeadData
     {
         NBTItem item = new NBTItem(itemStack);
         ItemMeta itemMeta = itemStack.getItemMeta();
-        return new PlayerHeadData(item.getUUID(
-                "HeadDrops_Owner"),
+        return new PlayerHeadData(UUID.fromString(item.getString(
+                "HeadDrops_Owner")),
                 itemMeta.getDisplayName(),
                 itemMeta.getLore(),
                 location

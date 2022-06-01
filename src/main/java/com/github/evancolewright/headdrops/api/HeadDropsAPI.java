@@ -15,10 +15,11 @@ public final class HeadDropsAPI
      */
     public static boolean isPlayerHead(ItemStack itemStack)
     {
+        if (itemStack == null) return false;
         if (itemStack.getType() == Material.AIR) return false;
         NBTItem nbtItem = new NBTItem(itemStack);
         if (!nbtItem.hasNBTData() || !nbtItem.hasCustomNbtData())
             return false;
-        return nbtItem.getUUID("HeadDrops_Owner") != null;
+        return nbtItem.getString("HeadDrops_Owner") != null;
     }
 }
