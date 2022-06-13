@@ -54,9 +54,3 @@ slain:
       - "&eDied on&7: &f&l{TIMESTAMP}"
       - "&eKilled by: &f&l{KILLER}"
       - "&eKilled with: &f&l{MURDER_WEAPON}"
-
-  special_drops:
-    enabled: true
-    special_items:
-      1:
-        material:
