@@ -81,10 +81,6 @@
             <url>https://repo.codemc.org/repository/maven-public/</url>
             <layout>default</layout>
         </repository>
-            <repository>
-                <id>jitpack.io</id>
-                <url>https://jitpack.io</url>
-            </repository>
     </repositories>
 
     <dependencies>
@@ -109,11 +105,5 @@
             <version>1.18.24</version>
             <scope>provided</scope>
         </dependency>
-    <dependency>
-        <groupId>com.github.TechFortress</groupId>
-        <artifactId>GriefPrevention</artifactId>
-        <version>16.18</version>
-        <scope>provided</scope>
-    </dependency>
     </dependencies>
 </project>
