@@ -12,7 +12,7 @@
 #           Source Code: https://github.com/evancolewright/HeadDrops            #
 #        Bug Reports: https://github.com/evancolewright/HeadDrops/issues        #
 #                                                                               #
-#                               VERSION 1.5.5                                   #
+#                               VERSION 1.5.6                                   #
 # ============================================================================= #
 
 
@@ -54,3 +54,9 @@ slain:
       - "&eDied on&7: &f&l{TIMESTAMP}"
       - "&eKilled by: &f&l{KILLER}"
       - "&eKilled with: &f&l{MURDER_WEAPON}"
+
+  special_drops:
+    enabled: true
+    special_items:
+      1:
+        material:
