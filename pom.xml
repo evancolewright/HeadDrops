@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.evancolewright</groupId>
-    <artifactId>headdrops</artifactId>
+    <artifactId>HeadDrops</artifactId>
     <version>1.5.6</version>
     <packaging>jar</packaging>
 
@@ -32,9 +32,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.3.1</version>
-                <configuration>
-                    <outputDirectory>C:\\Users\\evanc\\Desktop\\1.13+ Minecraft Server\\plugins</outputDirectory>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -65,6 +62,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <defaultGoal>clean package</defaultGoal>
     </build>
 
     <repositories>
@@ -95,7 +93,7 @@
         <dependency>
             <groupId>de.tr7zw</groupId>
             <artifactId>item-nbt-api</artifactId>
-            <version>2.10.0</version>
+            <version>2.11.1</version>
             <scope>compile</scope>
         </dependency>
         <!-- Lombok -->
