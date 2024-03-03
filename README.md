@@ -1,5 +1,8 @@
 # HeadDrops
 
+### Important Note
+__As of March 3rd, 2024, this repository has been archived and will not receive more updates.__  I don't have time to put into this project currently, but I encourage anybody that's adamant about fixing it to fork it and make it better! 
+
 HeadDrops is a server plugin made for Spigot servers running versions 1.8.8 - 1.18.2.  The plugin alters the player experience by allowing players on the server to drop their heads when they die.
 
 ## Building from Source
